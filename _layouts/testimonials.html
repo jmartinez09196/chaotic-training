@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html%}
+
+  <body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+    <!-- ======= Header ======= -->
+    {% include header.html%}
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- Hero Section - Home Page -->
+      <section id="hero" class="hero testimonials-bg">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-9 text-center">
+              <h2 data-aos="fade-up" data-aos-delay="100">Testimonials</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Hero Section -->
+
+      <!-- Testimonials Section - Home Page -->
+      <section id="testimonials" class="testimonials">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-9" data-aos="fade-up" data-aos-delay="200">
+              <div class="swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    }
+                  }
+                </script>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="testimonial-item text-center">
+                      <div>
+                        <img
+                          src="/assets/img/test.png"
+                          class="testimonial-img flex-shrink-0"
+                          alt=""
+                        />
+                        <div>
+                          <h3>Saul Goodman</h3>
+                          <h4>Lorem, ipsum dolor.</h4>
+                        </div>
+                      </div>
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span
+                          >Proin iaculis purus consequat sem cure digni ssim
+                          donec porttitora entum suscipit rhoncus. Accusantium
+                          quam, ultricies eget id, aliquam eget nibh et. Maecen
+                          aliquam, risus at semper.</span
+                        >
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- End testimonial item -->
+
+                  <div class="swiper-slide">
+                    <div class="testimonial-item text-center">
+                      <div>
+                        <img
+                          src="/assets/img/test.png"
+                          class="testimonial-img flex-shrink-0"
+                          alt=""
+                        />
+                        <div>
+                          <h3>Saul Goodman</h3>
+                          <h4>Lorem, ipsum dolor.</h4>
+                        </div>
+                      </div>
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span
+                          >Proin iaculis purus consequat sem cure digni ssim
+                          donec porttitora entum suscipit rhoncus. Accusantium
+                          quam, ultricies eget id, aliquam eget nibh et. Maecen
+                          aliquam, risus at semper.</span
+                        >
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- End testimonial item -->
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Testimonials Section -->
+    </main>
+
+    <!-- ======= Footer ======= -->
+    {% include footer.html%}
+    <!-- End Footer -->
+
+    <!-- Scroll Top Button -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    {% include script.html%}
+  </body>
+</html>
