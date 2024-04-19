@@ -207,7 +207,7 @@ section {
 /* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: var(--nav-color);
+    color: #fff;
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -236,7 +236,7 @@ section {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-dropdown-color);
+    color: #fff;
     padding: 10px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
@@ -250,6 +250,7 @@ section {
 
   .navmenu a i,
   .navmenu a:focus i {
+    color: #fff;
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
@@ -272,7 +273,7 @@ section {
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-dropdown-hover-color);
+    color: #fff;
   }
 
   .navmenu .active i,
@@ -312,7 +313,7 @@ section {
     color: #fff;
     position: absolute;
     font-size: 32px;
-    top: 15px;
+    top: 16px;
     right: 15px;
     margin-right: 0;
     z-index: 9999;
@@ -322,7 +323,7 @@ section {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    background: rgba(33, 37, 41, 0.8);
+    background: rgba(33, 37, 41, 0.95);
     transition: 0.3s;
   }
 
@@ -330,7 +331,11 @@ section {
     display: block;
   }
 }
-
+@media (max-width: 768px) {
+  .desktop {
+    display: none !important;
+  }
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
