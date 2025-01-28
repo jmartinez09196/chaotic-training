@@ -1,107 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html%}
+{% include head.html%}
 
-  <body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
-    <!-- ======= Header ======= -->
-    {% include header.html%}
-    <!-- End Header -->
+<body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+  <!-- ======= Header ======= -->
+  {% include header.html%}
+  <!-- End Header -->
 
-    <main id="main">
-      <!-- Hero Section - Home Page -->
-      <section id="hero" class="hero program-bg">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-9 text-center">
-              <h2 data-aos="fade-up" data-aos-delay="100">Contact Me</h2>
-            </div>
+  <main id="main">
+    <!-- Hero Section - Home Page -->
+    <section id="hero" class="hero program-bg">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 text-center">
+            <h2 data-aos="fade-up" data-aos-delay="100">Contact Me</h2>
           </div>
         </div>
-      </section>
-      <!-- End Hero Section -->
+      </div>
+    </section>
+    <!-- End Hero Section -->
 
-      <section id="contact" class="contact">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4 justify-content-center">
-            <div class="col-lg-9 text-center">
-              <form
-                action="forms/contact.php"
-                method="post"
-                class="php-email-form"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      name="name"
-                      class="form-control"
-                      placeholder="Your Name"
-                      required
-                    />
-                  </div>
-
-                  <div class="col-md-6">
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      placeholder="Your Email"
-                      required
-                    />
-                  </div>
-
-                  <div class="col-md-12">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="subject"
-                      placeholder="Subject"
-                      required
-                    />
-                  </div>
-
-                  <div class="col-md-12">
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      rows="6"
-                      placeholder="Message"
-                      required
-                    ></textarea>
-                  </div>
-
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">
-                      Your message has been sent. Thank you!
-                    </div>
-
-                    <button type="submit">Send Message</button>
-                  </div>
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-9 text-center">
+            <form class="php-email-form" id="lantern_form" action="https://formspree.io/f/{{site.contact_form}}" method="POST" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required />
                 </div>
-              </form>
-            </div>
-            <!-- End Contact Form -->
+
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required />
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required />
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="btn">Send Message</button>
+                </div>
+              </div>
+              <p id="lantern_form-status"></p>
+            </form>
+             <!-- Place this script at the end of the body tag -->
+             <script>
+                var form = document.getElementById("lantern_form");
+                async function handleSubmit(event) {
+                    event.preventDefault();
+                    var status = document.getElementById("lantern_form-status");
+                    var data = new FormData(event.target);
+                    fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                    }).then(response => {
+                    if (response.ok) {
+                        status.innerHTML = "Thanks for your submission!";
+                        form.reset()
+                    } else {
+                        response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                        } else {
+                            status.innerHTML = "Oops! There was a problem submitting your form"
+                        }
+                        })
+                    }
+                    }).catch(error => {
+                    status.innerHTML = "Oops! There was a problem submitting your form"
+                    });
+                }
+                form.addEventListener("submit", handleSubmit)
+            </script>
           </div>
+          <!-- End Contact Form -->
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <!-- ======= Footer ======= -->
-    {% include footer.html%}
-    <!-- End Footer -->
+  <!-- ======= Footer ======= -->
+  {% include footer.html%}
+  <!-- End Footer -->
 
-    <!-- Scroll Top Button -->
-    <a
-      href="#"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-    {% include script.html%}
-  </body>
+  {% include script.html%}
+</body>
+
 </html>
