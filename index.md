@@ -1,4 +1,4 @@
 ---
-title: Chaotic Training - Monement is Medicine
+title: Chaotic Training - Movement is Medicine
 layout: home
 ---
