@@ -871,13 +871,13 @@ section,
 # other pages
 --------------------------------------------------------------*/
 .about-bg {
-  background-image: url(/assets/img/about-me-bg.png);
+  background-image: url('../img/about-me.jpg');
 }
 .program-bg {
-  background-image: url(/assets/img/program.png);
+  background-image: url('/assets/img/program.png');
 }
 .programs {
-  background-image: url(/assets/img/program-section-bg.png);
+  background-image: url('/assets/img/program-section-bg.png');
   background-position: center;
   background-size: cover;
   position: relative;
