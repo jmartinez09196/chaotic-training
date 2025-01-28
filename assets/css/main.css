@@ -914,12 +914,15 @@ section,
   gap: 12px;
 }
 .programs .card img {
-  width: 80px;
+  max-width: 100%;
 }
 .programs .card h3 {
   color: #fff;
   font-size: 22px;
   font-weight: 700;
+}
+.programs .card h3 a{
+  color: inherit;
 }
 .programs .card p {
   color: #fff;
@@ -927,7 +930,10 @@ section,
 .programs .card:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
-
+.programs .post-title {
+  color: #fff;
+  margin-bottom: 20px;
+}
 .testimonials-bg {
   background-image: url(/assets/img/testimonials.png);
 }
