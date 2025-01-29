@@ -568,10 +568,14 @@ section,
   align-items: center;
   justify-content: center;
   background-image: url(/assets/img/hero-bg-index.png);
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+@media (min-width: 992px) {
+  .hero {
+    background-attachment: fixed;
+  }
 }
 .hero::after {
   content: "";
