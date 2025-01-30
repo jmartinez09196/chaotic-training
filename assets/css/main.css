@@ -666,7 +666,10 @@ section,
   position: relative;
 }
 .sec-nd {
-  background: #000 !important;
+  background: #000;
+}
+.bg-red {
+  background-color: #df1529;
 }
 .about-me::after {
   content: "";
