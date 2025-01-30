@@ -658,7 +658,7 @@ section,
 ------------------------------*/
 
 .about-me {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   /* background-image: url(/assets/img/why-me-bg.png); */
   background-position: center;
   background-repeat: no-repeat;
@@ -878,7 +878,7 @@ section,
   background-image: url('../img/about-me.jpg');
 }
 .program-bg {
-  background-image: url('/assets/img/program.png');
+  background-image: url('/assets/img/blog-bg.webp');
 }
 .programs {
   background-image: url('/assets/img/program-section-bg.png');
