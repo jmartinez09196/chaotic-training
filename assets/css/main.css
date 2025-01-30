@@ -883,6 +883,9 @@ section,
 .program-bg {
   background-image: url('/assets/img/blog-bg.webp');
 }
+.contact-bg {
+  background-image: url('/assets/img/program.png');
+}
 .programs {
   background-image: url('/assets/img/program-section-bg.png');
   background-position: center;
